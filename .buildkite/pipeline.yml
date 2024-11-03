@@ -1,13 +1,4 @@
 - label: ":semgrep: Semgrep Full Scan"
-  commands:
-    - if [[ $$BUILDKITE_COMMIT =~ ^[a-fA-F0-9]{40}$ ]]; then export SEMGREP_COMMIT=$${BUILDKITE_COMMIT}; fi
-    - export SEMGREP_BRANCH=$${BUILDKITE_BRANCH}
-    - export SEMGREP_REPO_URL=$${BUILDKITE_REPO}
-    - export SEMGREP_REPO_NAME="$$(echo "$$BUILDKITE_REPO" | sed -e 's#git@github.com:##' | sed -e 's#.git##')"
-    - semgrep ci
-  if: |
-    build.pull_request.id == null
-
   plugins:
     - docker#v5.11.0:
         image: semgrep/semgrep:latest
