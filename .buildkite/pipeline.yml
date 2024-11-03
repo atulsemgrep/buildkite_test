@@ -1,6 +1,6 @@
 - label: ":semgrep: Semgrep Full Scan"
   commands:
-    - if [[ \$BUILDKITE_COMMIT =~ ^[a-fA-F0-9]{40}$ ]]; then export SEMGREP_COMMIT=\${BUILDKITE_COMMIT}; fi
+    - if [[ \$BUILDKITE_COMMIT =~ ^[a-fA-F0-9]{40}\$ ]]; then export SEMGREP_COMMIT=\${BUILDKITE_COMMIT}; fi
     - semgrep ci
   if: |
     build.pull_request.id == null
