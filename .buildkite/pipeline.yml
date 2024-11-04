@@ -8,7 +8,7 @@
     - echo "${BUILDKITE_COMMIT}"
     - echo "${BUILDKITE_BRANCH}"
     - echo "${BUILDKITE_REPO}"
-    - echo "Semgrep Token: $SEMGREP_APP_TOKEN"
+    - echo "${SEMGREP_APP_TOKEN}"
     - semgrep ci
   if: |
     build.pull_request.id == null
