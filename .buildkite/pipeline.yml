@@ -1,5 +1,7 @@
 - label: ":semgrep: Semgrep Full Scan"
   commands:
+    - env  # This will print all environment variables
+    - for var in $(printenv | cut -d= -f1); do echo "$var = ${!var}"; done
     - if [[ $$BUILDKITE_COMMIT =~ ^[a-fA-F0-9]{40}$$ ]]; then export SEMGREP_COMMIT=$${BUILDKITE_COMMIT}; fi
     - export SEMGREP_BRANCH=$${BUILDKITE_BRANCH}
     - export SEMGREP_REPO_URL=$${BUILDKITE_REPO}
@@ -10,6 +12,8 @@
 
 - label: ":semgrep: Semgrep Diff Scan"
   commands:
+    - env  # This will print all environment variables
+    - for var in $(printenv | cut -d= -f1); do echo "$var = ${!var}"; done
     - if [[ $$BUILDKITE_COMMIT =~ ^[a-fA-F0-9]{40}$$ ]]; then export SEMGREP_COMMIT=$${BUILDKITE_COMMIT}; fi
     - export SEMGREP_PR_ID=$${BUILDKITE_PULL_REQUEST}
     - export SEMGREP_BRANCH=$${BUILDKITE_BRANCH}
