@@ -5,7 +5,6 @@
     - export SEMGREP_REPO_URL=$${BUILDKITE_REPO}
     - export SEMGREP_REPO_NAME="$$(echo "$$BUILDKITE_REPO" | sed -e 's#git@github.com:##' | sed -e 's#.git##')"
     - semgrep ci
-  branches: "master"
   if: |
     build.pull_request.id == null
 
@@ -17,7 +16,6 @@
     - export SEMGREP_REPO_URL=$${BUILDKITE_REPO}
     - export SEMGREP_REPO_NAME="$$(echo "$BUILDKITE_REPO" | sed -e 's#git@github.com:##' | sed -e 's#.git##')"
     - SEMGREP_BASELINE_REF=$${BUILDKITE_PULL_REQUEST_BASE_BRANCH} semgrep ci
-  branches: "!master"
   if: |
     build.pull_request.id != null
 
