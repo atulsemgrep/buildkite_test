@@ -8,7 +8,7 @@
     - echo "${BUILDKITE_COMMIT}"
     - echo "${BUILDKITE_BRANCH}"
     - echo "${BUILDKITE_REPO}"
-    - echo "${SEMGREP_APP_TOKE}"
+    - echo "${SEMGREP_APP_TOKEN}"
     - semgrep ci
   if: |
     build.pull_request.id == null
@@ -18,4 +18,4 @@
         image: semgrep/semgrep:latest
         environment:
           # The following variable is required to set up a scan connected to Semgrep AppSec Platform:
-          - SEMGREP_APP_TOKE: "676a288a3a67e0ed5ba59c635196b93c10deb216ac089508d1437ff59f0830e8"
+          - "SEMGREP_APP_TOKEN"
