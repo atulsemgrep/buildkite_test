@@ -8,7 +8,7 @@
     - echo "${BUILDKITE_COMMIT}"
     - echo "${BUILDKITE_BRANCH}"
     - echo "${BUILDKITE_REPO}"
-    - semgrep scan --config auto
+    - semgrep ci
   if: |
     build.pull_request.id == null
 
