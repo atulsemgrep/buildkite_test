@@ -13,4 +13,4 @@
         image: semgrep/semgrep:latest
         environment:
           # The following variable is required to set up a scan connected to Semgrep AppSec Platform:
-          - SEMGREP_APP_TOKEN: "676a288a3a67e0ed5ba59c635196b93c10deb216ac089508d1437ff59f0830e8"
+          - SEMGREP_APP_TOKEN: $$SEMGREP_APP_TOKEN
