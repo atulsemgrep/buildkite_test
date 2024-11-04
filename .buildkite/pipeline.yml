@@ -4,10 +4,7 @@
     - export SEMGREP_BRANCH=$${BUILDKITE_BRANCH}
     - export SEMGREP_REPO_URL=$${BUILDKITE_REPO}
     - export SEMGREP_REPO_NAME="$$(echo "$$BUILDKITE_REPO" | sed -e 's#git@github.com:##' | sed -e 's#.git##')"
-    - echo "SEMGREP_COMMIT: $$SEMGREP_COMMIT"
-    - echo "SEMGREP_BRANCH: $SEMGREP_BRANCH"
-    - echo "SEMGREP_REPO_URL: $$SEMGREP_REPO_URL"
-    - echo "SEMGREP_REPO_NAME: $$SEMGREP_REPO_NAME"
+    - echo "This is a simple echo command."
     - semgrep scan
   if: |
     build.pull_request.id == null
